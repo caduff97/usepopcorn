@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# 🎬 usePopcorn: Movie Ratings App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a **React application** for searching movies, tracking what you've watched, and rating them. It utilizes the [OMDb API](https://www.omdbapi.com/) to fetch movie details. This app allows users to search for movies, view movie details, and maintain a list of watched movies with custom ratings.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Movie Search**: Search for movies using the OMDb API.
+- **Watched List**: Add movies to a watched list with custom user ratings.
+- **Movie Details**: View detailed information about each movie, including IMDb ratings, plot, actors, and more.
+- **Persistent State**: Watched movies and ratings are saved in local storage, ensuring data is kept across sessions.
+- **Responsive Design**: The UI adapts for various screen sizes.
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React**: Main framework for the UI.
+- **Hooks**: Custom hooks (`useMovies`, `useLocalStorageState`, `useKey`) to manage movie fetching, local storage, and keyboard event handling.
+- **OMDb API**: Fetches movie data and details.
+- **LocalStorage**: Persists the watched list and user ratings.
+- **CSS**: Basic styling for the UI components.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+To run the app locally:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1.  Clone the repository:
+    `git clone https://github.com/your-username/usepopcorn.git`
 
-### `npm run build`
+2.  Navigate to the project directory:
+    `cd usepopcorn`
+3.  Install dependencies:
+    `npm install`
+4.  Start the app:
+    `npm start`
+5.  Open your browser and go to http://localhost:3000.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **`/src`**: The main source folder with components and custom hooks.
+  - **`App.js`**: The main component where all other components come together.
+  - **`useMovies.js`**: A custom hook for fetching movies from the OMDb API.
+  - **`useLocalStorageState.js`**: A custom hook for persisting state in localStorage.
+  - **`useKey.js`**: A custom hook for handling key presses (e.g., "Enter" to clear search).
+  - **`StarRating.js`**: A component for user ratings with stars.
+  - **`MovieList.js`**: Component to list the movies from the search results.
+  - **`MovieDetails.js`**: Component to display detailed information about a selected movie.
+  - **`WatchedMoviesList.js`**: A component to show the user's watched movies with ratings.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## API
 
-### `npm run eject`
+The app fetches movie data from the [OMDb API](http://www.omdbapi.com/). You need to sign up for an API key to get started.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Replace the placeholder API key in `App.js` with your own:
+`const KEY = "your_omdb_api_key";`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Future Improvements
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Responsive Enhancements**: Further improvements to the layout for better user experience on smaller devices.
+- **Pagination**: Add pagination for the search results to handle large datasets.
+- **Improved State Management**: Integrate a more robust state management solution like Redux for better scalability.
+- **Authentication**: Add user accounts to save watched movies across different devices.
+- **Backend Integration**: Connect to a backend service for storing movie data and user preferences.
